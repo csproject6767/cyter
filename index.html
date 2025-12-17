@@ -167,6 +167,24 @@
     body.dark .toggle{background:#4b5563}
     body.dark .toggle-knob{transform:translateX(22px)}
 
+    /* MOBILE NAV TOGGLE BUTTON */
+    .nav-toggle{
+      display:none;
+      border:none;
+      background:transparent;
+      cursor:pointer;
+      padding:6px;
+      border-radius:999px;
+    }
+    .nav-toggle span{
+      display:block;
+      width:20px;
+      height:2px;
+      background:var(--text-soft);
+      margin:4px 0;
+      border-radius:999px;
+    }
+
     /* LAYOUT */
     .shell{
       max-width:1120px;
@@ -656,12 +674,12 @@
         padding:18px 14px 20px;
         row-gap:16px;
       }
+      .hero h1{
+        font-size:2.1rem;
+      }
       .hero-text,
       .section-desc{
         font-size:.9rem;
-      }
-      .hero h1{
-        font-size:2.1rem;
       }
       .grid-3{
         grid-template-columns:minmax(0,1fr);
@@ -682,7 +700,13 @@
         width:100%;
         justify-content:center;
       }
-      .nav-center{display:none;}
+      /* use hamburger instead of desktop nav */
+      .nav-center{
+        display:none;
+      }
+      .nav-toggle{
+        display:block;
+      }
     }
 
     @media(max-width:600px){
@@ -712,7 +736,9 @@
         <div class="logo-sub">Calm cyber awareness for families & adults</div>
       </div>
     </div>
-    <div class="nav-center">
+
+    <!-- Desktop nav -->
+    <div class="nav-center" id="navDesktop">
       <button class="active" onclick="showPage('home', this)">Home</button>
       <button onclick="showPage('threats', this)">Threats</button>
       <button onclick="showPage('protect', this)">Protection</button>
@@ -720,12 +746,30 @@
       <button onclick="showPage('hacked', this)">If hacked</button>
       <button onclick="showPage('sim', this)">Simulator</button>
     </div>
+
+    <!-- Mobile hamburger -->
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+
     <div class="toggle-wrap">
       <span>Light</span>
       <div class="toggle" id="modeToggle">
         <div class="toggle-knob"></div>
       </div>
       <span>Dark</span>
+    </div>
+  </div>
+
+  <!-- Mobile dropdown menu -->
+  <div id="navMobile" style="display:none;border-top:1px solid var(--border);">
+    <div style="max-width:1120px;margin:0 auto;padding:8px 14px 10px;display:flex;flex-wrap:wrap;gap:6px;">
+      <button class="btn btn-outline" style="flex:1 1 45%;min-width:120px;font-size:.8rem;" onclick="showPage('home');setActiveNav('home')">Home</button>
+      <button class="btn btn-outline" style="flex:1 1 45%;min-width:120px;font-size:.8rem;" onclick="showPage('threats');setActiveNav('threats')">Threats</button>
+      <button class="btn btn-outline" style="flex:1 1 45%;min-width:120px;font-size:.8rem;" onclick="showPage('protect');setActiveNav('protect')">Protection</button>
+      <button class="btn btn-outline" style="flex:1 1 45%;min-width:120px;font-size:.8rem;" onclick="showPage('india');setActiveNav('india')">India reality</button>
+      <button class="btn btn-outline" style="flex:1 1 45%;min-width:120px;font-size:.8rem;" onclick="showPage('hacked');setActiveNav('hacked')">If hacked</button>
+      <button class="btn btn-outline" style="flex:1 1 45%;min-width:120px;font-size:.8rem;" onclick="showPage('sim');setActiveNav('sim')">Simulator</button>
     </div>
   </div>
 </nav>
@@ -743,8 +787,8 @@
           and a clear checklist to follow if something ever feels wrong.
         </p>
         <div class="actions">
-          <button class="btn btn-primary" onclick="showPage('threats')">See the main threats →</button>
-          <button class="btn btn-outline" onclick="showPage('india')">See India‑specific risks</button>
+          <button class="btn btn-primary" onclick="showPage('threats');setActiveNav('threats')">See the main threats →</button>
+          <button class="btn btn-outline" onclick="showPage('india');setActiveNav('india')">See India‑specific risks</button>
         </div>
       </div>
 
@@ -1124,6 +1168,14 @@
     window.scrollTo({top:0,behavior:'smooth'});
   }
 
+  function setActiveNav(id){
+    const map = {home:0,threats:1,protect:2,india:3,hacked:4,sim:5};
+    const index = map[id];
+    const buttons = document.querySelectorAll('#navDesktop button');
+    buttons.forEach(b=>b.classList.remove('active'));
+    if(buttons[index]) buttons[index].classList.add('active');
+  }
+
   document.getElementById('modeToggle').addEventListener('click', () => {
     document.body.classList.toggle('dark');
   });
@@ -1149,6 +1201,12 @@
     f.textContent = "✅ This situation is more normal: " +
       msg + " Even then, it's best to open the official app or website yourself instead of trusting any link.";
   }
+
+  const navToggle = document.getElementById('navToggle');
+  const navMobile = document.getElementById('navMobile');
+  navToggle.addEventListener('click', () => {
+    navMobile.style.display = navMobile.style.display === 'none' || navMobile.style.display === '' ? 'block' : 'none';
+  });
 
   window.addEventListener('load', () => {
     const meter=document.getElementById('riskMeter');
