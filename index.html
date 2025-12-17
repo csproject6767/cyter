@@ -9,10 +9,10 @@
       --bg: #f5f5f5;
       --bg-soft: #e5e7eb;
       --card: #ffffff;
-      --olive: #1f2937;        /* deep neutral heading */
-      --olive-soft: #2563eb;   /* calm blue accent */
-      --accent: #f97316;       /* subtle orange highlight */
-      --danger: #b91c1c;       /* strong risk red */
+      --olive: #1f2937;
+      --olive-soft: #2563eb;
+      --accent: #f97316;
+      --danger: #b91c1c;
       --text-main: #111827;
       --text-soft: #4b5563;
       --text-muted: #9ca3af;
@@ -648,10 +648,20 @@
 
     /* RESPONSIVE – MOBILE */
     @media(max-width:900px){
+      .shell{
+        padding:18px 14px 40px;
+      }
       .hero{
         grid-template-columns:minmax(0,1fr);
-        padding:20px 16px;
-        row-gap:18px;
+        padding:18px 14px 20px;
+        row-gap:16px;
+      }
+      .hero-text,
+      .section-desc{
+        font-size:.9rem;
+      }
+      .hero h1{
+        font-size:2.1rem;
       }
       .grid-3{
         grid-template-columns:minmax(0,1fr);
@@ -666,13 +676,6 @@
       .sim{
         grid-template-columns:minmax(0,1fr);
         gap:12px;
-      }
-      .shell{
-        padding:18px 14px 40px;
-      }
-      .hero-text,
-      .section-desc{
-        font-size:.9rem;
       }
       .btn,
       .sim button{
