@@ -646,13 +646,55 @@
       border-color:#1f2937;
     }
 
-    /* RESPONSIVE */
+    /* RESPONSIVE – MOBILE */
     @media(max-width:900px){
-      .hero{grid-template-columns:minmax(0,1fr);padding:22px 18px}
-      .grid-3{grid-template-columns:minmax(0,1fr)}
-      .split,.two-col,.india-stats{grid-template-columns:minmax(0,1fr)}
-      .sim{grid-template-columns:minmax(0,1fr)}
-      .nav-center{display:none}
+      .hero{
+        grid-template-columns:minmax(0,1fr);
+        padding:20px 16px;
+        row-gap:18px;
+      }
+      .grid-3{
+        grid-template-columns:minmax(0,1fr);
+        gap:14px;
+      }
+      .split,
+      .two-col,
+      .india-stats{
+        grid-template-columns:minmax(0,1fr);
+        gap:14px;
+      }
+      .sim{
+        grid-template-columns:minmax(0,1fr);
+        gap:12px;
+      }
+      .shell{
+        padding:18px 14px 40px;
+      }
+      .hero-text,
+      .section-desc{
+        font-size:.9rem;
+      }
+      .btn,
+      .sim button{
+        width:100%;
+        justify-content:center;
+      }
+      .nav-center{display:none;}
+    }
+
+    @media(max-width:600px){
+      .nav-inner{
+        padding:8px 12px;
+      }
+      .toggle-wrap{
+        font-size:.72rem;
+      }
+      .gov-link{
+        width:100%;
+        justify-content:center;
+        text-align:center;
+        padding:8px 10px;
+      }
     }
   </style>
 </head>
