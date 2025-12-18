@@ -23,18 +23,18 @@
     }
 
     body.dark {
-      --bg: #0c1065; /* Deep Indian blue */
+      --bg: #0c1065;
       --bg-soft: #1b8aa4;
       --card: #1b8aa4;
-      --olive: #e0f7fa; /* Soft sky blue */
-      --olive-soft: #004b49; /* Deep peacock blue-green */
+      --olive: #e0f7fa;
+      --olive-soft: #004b49;
       --accent: #004b49;
-      --danger: #ef4444; /* Festive red */
+      --danger: #ef4444;
       --text-main: #e0f7fa;
       --text-soft: #b2ebf2;
       --text-muted: #78e2f2;
       --border: #004b49;
-      --shadow-soft: 0 24px 50px rgba(27, 138, 164, 0.5); /* Peacock glow */
+      --shadow-soft: 0 24px 50px rgba(27, 138, 164, 0.5);
     }
 
     * { margin:0; padding:0; box-sizing:border-box }
@@ -641,36 +641,90 @@
     .india-copy strong{color:var(--olive);}
 
     /* SIMULATOR */
-    .sim{
+    .sim-grid{
       display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
-      gap:18px;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:16px;
       margin-top:18px;
     }
-    .sim button{
-      padding:20px 16px;
+    .sim-card{
+      background:var(--card);
       border-radius:16px;
+      border:1px solid var(--border);
+      padding:12px 14px 12px;
+      box-shadow:var(--shadow-soft);
+      font-size:.85rem;
+      color:var(--text-soft);
+    }
+    .sim-msg{
+      font-size:.9rem;
+      margin-bottom:10px;
+    }
+    .sim-buttons{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+    .sim-btn{
+      flex:0 0 auto;
+      padding:6px 10px;
+      border-radius:999px;
       border:none;
-      background:#1f2937;
-      color:#f9fafb;
-      font-size:.93rem;
+      font-size:.8rem;
       cursor:pointer;
-      box-shadow:0 14px 32px rgba(15,23,42,.3);
-      transition:.3s transform,.3s box-shadow,.3s background;
+      transition:.2s background,.2s transform;
     }
-    .sim button:hover{
-      transform:translateY(-3px);
-      box-shadow:0 22px 44px rgba(15,23,42,.4);
-      background:#111827;
+    .sim-btn-safe{
+      background:#16a34a;
+      color:#f9fafb;
     }
-    .sim-feedback{
+    .sim-btn-scam{
+      background:#b91c1c;
+      color:#f9fafb;
+    }
+    .sim-btn:hover{
+      transform:translateY(-1px);
+    }
+    .sim-explain{
+      margin-top:6px;
+      font-size:.8rem;
+      color:var(--text-muted);
+      min-height:30px;
+    }
+    .sim-score{
       margin-top:18px;
-      padding:16px;
-      border-radius:16px;
+      padding:10px 12px;
+      border-radius:14px;
       background:#e5f2ff;
       color:#1e3a8a;
-      display:none;
-      font-size:.9rem;
+      font-size:.86rem;
+    }
+
+    .sim-timeline{
+      margin-top:24px;
+      background:var(--card);
+      border-radius:16px;
+      border:1px solid var(--border);
+      padding:14px 16px 16px;
+      box-shadow:var(--shadow-soft);
+      font-size:.86rem;
+      color:var(--text-soft);
+    }
+    .sim-timeline h3{
+      font-size:1rem;
+      margin-bottom:6px;
+      color:var(--olive);
+    }
+    .sim-year{
+      font-weight:600;
+      margin-top:6px;
+      margin-bottom:2px;
+      font-size:.85rem;
+    }
+    .sim-year span{
+      font-weight:400;
+      color:var(--text-muted);
+      margin-left:4px;
     }
 
     /* FOOTER */
@@ -714,16 +768,13 @@
         grid-template-columns:minmax(0,1fr);
         gap:14px;
       }
-      .sim{
+      .sim-grid{
         grid-template-columns:minmax(0,1fr);
-        gap:12px;
       }
-      .btn,
-      .sim button{
+      .btn{
         width:100%;
         justify-content:center;
       }
-      /* use hamburger instead of desktop nav */
       .nav-center{
         display:none;
       }
@@ -756,11 +807,10 @@
       <div class="logo-dot"></div>
       <div>
         <div class="logo-title">Cyber</div>
-        <div class="logo-sub">cyber awareness </div>
+        <div class="logo-sub">cyber awareness</div>
       </div>
     </div>
 
-    <!-- Desktop nav -->
     <div class="nav-center" id="navDesktop">
       <button class="active" onclick="showPage('home', this)">Home</button>
       <button onclick="showPage('threats', this)">Threats</button>
@@ -770,7 +820,6 @@
       <button onclick="showPage('sim', this)">Simulator</button>
     </div>
 
-    <!-- Mobile hamburger -->
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </button>
@@ -784,7 +833,6 @@
     </div>
   </div>
 
-  <!-- Mobile dropdown menu -->
   <div id="navMobile" style="display:none;border-top:1px solid var(--border);">
     <div style="max-width:1120px;margin:0 auto;padding:8px 14px 10px;display:flex;flex-wrap:wrap;gap:6px;">
       <button class="btn btn-outline" style="flex:1 1 45%;min-width:120px;font-size:.8rem;" onclick="showPage('home');setActiveNav('home')">Home</button>
@@ -815,18 +863,11 @@
           <button class="btn btn-outline" onclick="showPage('india');setActiveNav('india')">See India‑specific risks</button>
         </div>
 
-        <!-- Cybersecurity awareness YouTube video -->
         <div class="hero-video">
-          <a
-            href="https://www.youtube.com/watch?v=yrln8nyVBLU"
-            target="_blank"
-            rel="noopener"
-          >
-            <img
-              src="https://img.youtube.com/vi/yrln8nyVBLU/maxresdefault.jpg"
-              alt="Cybersecurity awareness video"
-              class="hero-thumb"
-            />
+          <a href="https://www.youtube.com/watch?v=yrln8nyVBLU" target="_blank" rel="noopener">
+            <img src="https://img.youtube.com/vi/yrln8nyVBLU/maxresdefault.jpg"
+                 alt="Cybersecurity awareness video"
+                 class="hero-thumb" />
           </a>
           <p class="hero-video-caption">
             Watch: Simple cyber security tips for everyday internet use.
@@ -954,7 +995,7 @@
               <div class="step-title">Back up what you'd hate to lose</div>
               <p>
                 Keep important photos and documents in at least two places
-                (like your device plus a cloud backup).  
+                (like your device plus a cloud backup).
                 Even if one device is hit, your memories and records stay safe.
               </p>
             </div>
@@ -1061,7 +1102,7 @@
           <p><strong>Some high‑impact scams and fraud patterns:</strong></p>
           <ul style="margin-top:6px;padding-left:18px;">
             <li>
-              Large‑value banking and loan frauds where banks reported over ₹36,000 crore lost to fraud in a single financial year, including re‑classified legacy loan scams.
+              Large‑value banking and loan frauds where banks reported tens of thousands of crores lost to fraud in a single financial year, including legacy loan scams.
             </li>
             <li>
               Rapid rise of digital‑payment and internet/card frauds, which now form well over half of all reported bank fraud cases by number, even if each case is small in value.
@@ -1154,7 +1195,7 @@
         <div class="callout">
           <strong>Good to remember:</strong> scams work by making you feel rushed, stupid or alone.
           Taking a breath, asking someone you trust, and following a simple plan
-          is exactly how professionals handle incidents too.  
+          is exactly how professionals handle incidents too.
           <br /><br />
           You can even set a small “digital checkup” once a month:
           quickly review logins, 2‑step verification, app permissions and bank alerts.
@@ -1171,25 +1212,115 @@
         <div>
           <h2>Quick judgement simulator</h2>
           <p class="section-desc">
-            Imagine these messages appear on your screen.
-            Which ones feel safe, and which smell like a scam?
+            Read each message and decide whether it feels safe or like a scam.
+            Then see the explanation and your running score.
           </p>
         </div>
       </div>
 
-      <div class="sim">
-        <button onclick="scam('You won a new phone! Tap this link in the next 3 minutes to claim your prize.')">
-          "You won a new phone! Tap this link in the next 3 minutes to claim your prize."
-        </button>
-        <button onclick="safe('Your banking app shows a notification and asks you to open the app normally to review a login attempt.')">
-          "Your banking app shows a notification and asks you to open the app to review activity."
-        </button>
-        <button onclick="scam('Your account will be deleted today. Reply with your OTP to keep it active.')">
-          "Your account will be deleted today. Reply with your OTP to keep it active."
-        </button>
+      <div class="sim-grid">
+        <div class="sim-card" data-answer="scam">
+          <div class="sim-msg">
+            "Congratulations! You won a smartphone. Pay ₹2,999 registration fee within 5 minutes to claim your prize."
+          </div>
+          <div class="sim-buttons">
+            <button class="sim-btn sim-btn-safe" onclick="answerSim(this,'safe')">Safe</button>
+            <button class="sim-btn sim-btn-scam" onclick="answerSim(this,'scam')">Scam</button>
+          </div>
+          <div class="sim-explain"></div>
+        </div>
+
+        <div class="sim-card" data-answer="safe">
+          <div class="sim-msg">
+            "Your banking app shows a notification and asks you to open the app to review a login attempt."
+          </div>
+          <div class="sim-buttons">
+            <button class="sim-btn sim-btn-safe" onclick="answerSim(this,'safe')">Safe</button>
+            <button class="sim-btn sim-btn-scam" onclick="answerSim(this,'scam')">Scam</button>
+          </div>
+          <div class="sim-explain"></div>
+        </div>
+
+        <div class="sim-card" data-answer="scam">
+          <div class="sim-msg">
+            "Your account will be deleted today. Reply with your OTP or PIN to keep it active."
+          </div>
+          <div class="sim-buttons">
+            <button class="sim-btn sim-btn-safe" onclick="answerSim(this,'safe')">Safe</button>
+            <button class="sim-btn sim-btn-scam" onclick="answerSim(this,'scam')">Scam</button>
+          </div>
+          <div class="sim-explain"></div>
+        </div>
+
+        <div class="sim-card" data-answer="scam">
+          <div class="sim-msg">
+            "KYC expired for your bank account. Click this short link and enter full details to avoid account freeze."
+          </div>
+          <div class="sim-buttons">
+            <button class="sim-btn sim-btn-safe" onclick="answerSim(this,'safe')">Safe</button>
+            <button class="sim-btn sim-btn-scam" onclick="answerSim(this,'scam')">Scam</button>
+          </div>
+          <div class="sim-explain"></div>
+        </div>
+
+        <div class="sim-card" data-answer="safe">
+          <div class="sim-msg">
+            "UPI payment of ₹500 to XYZ Store successful. If this wasn't you, open the official bank app to raise a dispute."
+          </div>
+          <div class="sim-buttons">
+            <button class="sim-btn sim-btn-safe" onclick="answerSim(this,'safe')">Safe</button>
+            <button class="sim-btn sim-btn-scam" onclick="answerSim(this,'scam')">Scam</button>
+          </div>
+          <div class="sim-explain"></div>
+        </div>
+
+        <div class="sim-card" data-answer="scam">
+          <div class="sim-msg">
+            "Work from home: earn ₹5,000 daily by liking videos. First, pay a refundable 'security deposit' to join the group."
+          </div>
+          <div class="sim-buttons">
+            <button class="sim-btn sim-btn-safe" onclick="answerSim(this,'safe')">Safe</button>
+            <button class="sim-btn sim-btn-scam" onclick="answerSim(this,'scam')">Scam</button>
+          </div>
+          <div class="sim-explain"></div>
+        </div>
       </div>
 
-      <div id="simFeedback" class="sim-feedback"></div>
+      <div id="simScore" class="sim-score">
+        Score: <span id="simCorrect">0</span> correct out of <span id="simTotal">0</span> attempts.
+      </div>
+
+      <div class="sim-timeline">
+        <h3>Year‑by‑year India snapshot (illustrative)</h3>
+        <p style="font-size:.8rem;color:var(--text-muted);">
+          This is a simple educational view showing how scams and ransomware have evolved. Adjust years/details as needed.
+        </p>
+
+        <div class="sim-year">2018<span>Rise of OTP and SIM‑swap frauds</span></div>
+        <p style="font-size:.84rem;">
+          Attackers started heavily targeting one‑time passwords and SIM swaps to take over net‑banking and wallets.
+        </p>
+
+        <div class="sim-year">2019<span>Fake tech‑support and remote‑access scams</span></div>
+        <p style="font-size:.84rem;">
+          More cases where callers asked victims to install screen‑sharing apps to “fix” bank or device issues, then emptied accounts.
+        </p>
+
+        <div class="sim-year">2020<span>Pandemic‑era phishing and relief scams</span></div>
+        <p style="font-size:.84rem;">
+          COVID‑19 donations, relief schemes and fake work‑from‑home offers were widely abused, along with a sharp rise in ransomware globally.
+        </p>
+
+        <div class="sim-year">2021–2022<span>Instant‑loan apps and sextortion</span></div>
+        <p style="font-size:.84rem;">
+          Harassing loan‑app collections and misuse of contact lists grew, while sextortion and social‑media account takeovers increased.
+        </p>
+
+        <div class="sim-year">2023–2024<span>UPI / QR fraud and targeted ransomware</span></div>
+        <p style="font-size:.84rem;">
+          QR‑code scams, fake customer‑care numbers and investment frauds hit everyday users, while more focused ransomware attacks disrupted some organisations.
+        </p>
+      </div>
     </section>
   </div>
 </div>
@@ -1231,19 +1362,6 @@
     });
   });
 
-  function scam(msg){
-    const f=document.getElementById('simFeedback');
-    f.style.display='block';
-    f.textContent = "⚠️ Be careful. This kind of message uses rewards or fear to rush you: " +
-      msg + " Real services will not ask for OTPs or private info in random links or chats.";
-  }
-  function safe(msg){
-    const f=document.getElementById('simFeedback');
-    f.style.display='block';
-    f.textContent = "✅ This situation is more normal: " +
-      msg + " Even then, it's best to open the official app or website yourself instead of trusting any link.";
-  }
-
   const navToggle = document.getElementById('navToggle');
   const navMobile = document.getElementById('navMobile');
   navToggle.addEventListener('click', () => {
@@ -1256,8 +1374,32 @@
       requestAnimationFrame(()=>{meter.style.transform='scaleX(0.8)';});
     }
   });
+
+  // Simulator logic
+  let simCorrect = 0;
+  let simTotal = 0;
+
+  function answerSim(button, choice){
+    const card = button.closest('.sim-card');
+    const correct = card.getAttribute('data-answer');
+    const explain = card.querySelector('.sim-explain');
+
+    // prevent double‑counting if already answered
+    if(card.dataset.answered === 'true') return;
+    card.dataset.answered = 'true';
+
+    simTotal++;
+    if(choice === correct){
+      simCorrect++;
+      explain.textContent = "Correct. This matches the pattern of a " + (correct === "scam" ? "scam message. Never rush, never share OTP/PIN, and avoid links you didn't ask for." : "legitimate notification. Still, always open the official app yourself rather than tapping links.");
+    } else {
+      explain.textContent = "Not quite. This example is treated as " + correct.toUpperCase() + ". Look for urgency, payment requests, unknown links, and demands for OTP/PIN as key warning signs.";
+    }
+
+    document.getElementById('simCorrect').textContent = simCorrect;
+    document.getElementById('simTotal').textContent = simTotal;
+  }
 </script>
 
 </body>
 </html>
-
