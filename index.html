@@ -1225,8 +1225,6 @@
       .nav-toggle{display:block}
       .grid-3{grid-template-columns:1fr}
       .shell{padding:24px 16px 60px}
-      .nav-inner{justify-content:space-between}
-      .toggle-wrap{order:-1}
     }
     @media(max-width:768px){
       .hero{padding:24px 16px}
@@ -1242,9 +1240,6 @@
       .pie-chart{width:180px;height:180px}
       .pie-center{inset:40px;font-size:.8rem}
       .actions{flex-direction:column}
-      .nav-inner .nav-left{flex:1}
-      #navMobile div{display:flex;flex-direction:column;gap:8px;align-items:stretch}
-      #navMobile div .btn{flex:none;width:auto}
     }
     @media(max-width:480px){
       .hero-kicker{letter-spacing:.2em;font-size:.8rem}
@@ -1255,11 +1250,6 @@
       .step-number{position:static;margin:0 auto 12px}
       h1{font-size:2rem}
       h2{font-size:1.8rem}
-      .shell{padding:16px 12px 60px}
-      .nav-inner{padding:8px 12px;gap:8px}
-      .nav-left{flex-direction:column;align-items:flex-start;gap:4px}
-      .logo-dot{width:28px;height:28px}
-      .toggle-wrap{display:none} /* Hide toggle on very small screens for space */
     }
     /* Accessibility */
     @media (prefers-reduced-motion: reduce) {
@@ -1285,7 +1275,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="dark">
 <nav>
   <div class="nav-inner">
     <div class="nav-left">
@@ -1406,4 +1396,516 @@
           </div>
         </div>
         <div class="flow-step">
-          <div class="
+          <div class="flow-icon">🚨</div>
+          <div class="flow-text">
+            <strong>Escalate if Needed:</strong> For relentless threats, engage authorities without hesitation. In India, specialized resources deliver rapid, resolute action.
+            <br>
+            <span class="gov-link">
+              <span class="icon">⚖️</span>
+              <a href="https://cybercrime.gov.in" target="_blank" rel="noopener">cybercrime.gov.in</a>
+              · Helpline: 1930
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- THREATS -->
+  <div id="threats" class="page">
+    <section class="block observe">
+      <div class="section-head">
+        <div>
+          <h2>Real-World Deceptions Unveiled</h2>
+          <p class="section-desc">
+            Everyday traps prey on trust, not tech prowess. Decode these patterns to evade 90% of schemes with effortless foresight.
+          </p>
+        </div>
+      </div>
+      <div class="grid-3">
+        <article class="card observe">
+          <div class="card-label">01 · Phishing Lures</div>
+          <h3>"Urgent: Verify Your UPI—Click Now"</h3>
+          <p>
+            Scammers impersonate banks, e-wallets, and officials through SMS or WhatsApp, peddling "quick fixes" laced with credential-stealing links.
+          </p>
+          <p class="card-note">
+            Authentic alerts funnel to apps directly—never detour. Fortify OTPs like vaults; corroborate independently, always.
+          </p>
+        </article>
+        <article class="card observe">
+          <div class="card-label">02 · Ponzi Promises</div>
+          <h3>"Guaranteed Returns: Invest Today, Withdraw Tomorrow"</h3>
+          <p>
+            Telegram "gurus" and phantom apps bait with forged windfalls, ratcheting deposits until the inevitable vanishing act.
+          </p>
+          <p class="card-note">
+            Viable returns cap at 10-15% yearly—probe with micro-stakes. Locked "gains"? That's your cue to ghost.
+          </p>
+        </article>
+        <article class="card observe">
+          <div class="card-label">03 · Shadow Identities</div>
+          <h3>Unauthorized Debts in Your Name</h3>
+          <p>
+            Leaked intel spawns spectral accounts: loans, cards, SIMs ignited covertly, erupting via collections or notifications.
+          </p>
+          <p class="card-note">
+            Vigil CIBIL/SMS sweeps monthly. Lightning disputes with issuers freeze the phantom in its tracks.
+          </p>
+        </article>
+      </div>
+    </section>
+  </div>
+  <!-- PROTECT -->
+  <div id="protect" class="page">
+    <section class="block observe">
+      <div class="section-head">
+        <div>
+          <h2>Fortify with Four Pillars</h2>
+          <p class="section-desc">
+            Ascend security via seamless rituals—digital hygiene that accrues exponentially, turning vulnerability into velocity.
+          </p>
+        </div>
+      </div>
+      <div class="split">
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div>
+              <div class="step-title">Fortress Accounts</div>
+              <p>
+                Champion email, social, and finance gateways with 16+ character citadels and ubiquitous 2FA—your first line, impenetrable.
+              </p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <div>
+              <div class="step-title">Auto-Defend Updates</div>
+              <p>
+                Unleash autonomous fortifications for OS, apps, browsers—they caulk breaches before marauders muster.
+              </p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <div>
+              <div class="step-title">Deliberate Clicks</div>
+              <p>
+                Hype or haste? Inhale, navigate natively. Urgency? The cutpurse's perennial ploy—your pause, their peril.
+              </p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">4</div>
+            <div>
+              <div class="step-title">Redundant Backups</div>
+              <p>
+                Echo essentials across cloud and cache. Ransomware ravages one; your archive ascends, eternal.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="habits-list">
+          <div class="habit active">
+            <div class="habit-head">
+              <span>Passphrase Mastery</span>
+              <span>🔐</span>
+            </div>
+            <div class="habit-body">
+              Forge with epics like "BlueSky!2025#Journey"—recalled readily, resisted rigorously. Curators like Bitwarden conduct the chorus seamlessly.
+            </div>
+          </div>
+          <div class="habit">
+            <div class="habit-head">
+              <span>2FA Everywhere</span>
+              <span>🛡️</span>
+            </div>
+            <div class="habit-body">
+              Authenticator supremacy over SMS frailty. Quarterly session sweeps exorcise ethereal intruders.
+            </div>
+          </div>
+          <div class="habit">
+            <div class="habit-head">
+              <span>Pristine Ecosystems</span>
+              <span>🧹</span>
+            </div>
+            <div class="habit-body">
+              Biennial audits purge apps/extensions; official silos solely. Indigenous scans snare stealthy squatters prematurely.
+            </div>
+          </div>
+          <div class="habit">
+            <div class="habit-head">
+              <span>Network Sentinel</span>
+              <span>🌐</span>
+            </div>
+            <div class="habit-body">
+              Router relics? Relinquish. WPA3 + VPN veils = your bastion's bedrock, unbreached.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- INDIA REALITY -->
+  <div id="india" class="page">
+    <section class="block observe">
+      <div class="section-head">
+        <div>
+          <h2>India's Cyber Frontier: Unvarnished Insights</h2>
+          <p class="section-desc">
+            From teeming townships to tranquil hamlets, digital dawn ignites audacious assaults. Illuminate your path—knowledge is the ultimate ward.
+          </p>
+        </div>
+      </div>
+      <div class="india-stats">
+        <div class="pie-wrapper observe">
+          <div class="pie-chart">
+            <div class="pie-center">
+              India Cyber<br />Incidents<br />2025*
+            </div>
+          </div>
+          <div class="pie-legend">
+            <div class="pie-legend-item">
+              <span class="legend-color" style="background:#ef4444;"></span>
+              <span>Financial Fraud ~35%</span>
+            </div>
+            <div class="pie-legend-item">
+              <span class="legend-color" style="background:#f59e0b;"></span>
+              <span>Identity Theft ~25%</span>
+            </div>
+            <div class="pie-legend-item">
+              <span class="legend-color" style="background:#3b82f6;"></span>
+              <span>Phishing/Social ~20%</span>
+            </div>
+            <div class="pie-legend-item">
+              <span class="legend-color" style="background:#64748b;"></span>
+              <span>Other ~20%</span>
+            </div>
+          </div>
+          <p style="font-size:.85rem;color:var(--text-muted);margin-top:12px;text-align:center;font-style:italic;">
+            *2025 Projections: Finance reigns, NCRP tallies 36.45 lakh by February—trends accelerating.
+          </p>
+        </div>
+        <div class="india-copy observe">
+          <p>
+            Cyber docket detonated from ~10,000 in 2014 to 86,420 police probes in 2023; NCRP vaults 36.45 lakh by 2025 dawn—foreseen forfeits eclipse ₹20,000 crore annually.
+          </p>
+          <br />
+          <p><strong>Prevalent Predators:</strong></p>
+          <ul>
+            <li>Banking blitzes and UPI undercurrents, siphoning billions yearly via phishing phantoms and malware maelstroms.</li>
+            <li>Wallet/card whispers, surpassing 50% of fraud volume—petty pilferages compounding catastrophically.</li>
+            <li>Aadhaar/PAN phantoms forging fiscal fictions, unveiled solely by voracious vendors or vigilance vaults.</li>
+          </ul>
+          <br />
+          <p>
+            <strong>Response Ready?</strong>
+            <span class="gov-link">
+              <span class="icon">⚖️</span>
+              <a href="https://cybercrime.gov.in" target="_blank" rel="noopener">cybercrime.gov.in</a>
+              · Helpline 1930
+            </span>
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- IF HACKED -->
+  <div id="hacked" class="page">
+    <section class="block observe">
+      <div class="section-head">
+        <div>
+          <h2>When the Breach Hits Home</h2>
+          <p class="section-desc">
+            Anomalous accesses? Phantom payouts? Halt, harness this blueprint to reclaim command—resilience rises from ruins.
+          </p>
+        </div>
+      </div>
+      <div class="two-col">
+        <div class="checklist observe">
+          <div class="check-item">
+            <div class="check-bullet"></div>
+            <div>
+              <strong>1 · Secure from Sanctuary:</strong><br />
+              Procure pristine proxy to recalibrate keys—email vanguard, then propagate to affiliates.
+            </div>
+          </div>
+          <div class="check-item">
+            <div class="check-bullet"></div>
+            <div>
+              <strong>2 · Layer Up with 2FA:</strong><br />
+              Invoke authenticator armors; banish bizarre beacons from your beacon ledger.
+            </div>
+          </div>
+          <div class="check-item">
+            <div class="check-bullet"></div>
+            <div>
+              <strong>3 · Purge and Patch:</strong><br />
+              Profound probes, app amputations, update upheavals—eradicate echoes eternally.
+            </div>
+          </div>
+          <div class="check-item">
+            <div class="check-bullet"></div>
+            <div>
+              <strong>4 · Engage Official Channels:</strong><br />
+              Sanctioned sentinels solely—no nomadic numerals. Chronicle for conquest.
+            </div>
+          </div>
+          <div class="check-item">
+            <div class="check-bullet"></div>
+            <div>
+              <strong>5 · Escalate Formally:</strong><br />
+              Snapshots + sagas to sentries. In India:
+              <span class="gov-link">
+                <span class="icon">⚖️</span>
+                <a href="https://cybercrime.gov.in" target="_blank" rel="noopener">cybercrime.gov.in</a>
+                · 1930
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="callout observe">
+          <strong>Vital Mindset:</strong> Frenzy feeds foes—fortitude flourishes. Convene confidants, canonize quarterly quests (logins, licenses, lamplights), and internalize: Rebirth from rupture refines your rampart.
+          <br /><br />
+          Elites enact identically: Quarantine, query, quarantine anew. You're architect, not aftermath.
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- SIMULATOR -->
+  <div id="sim" class="page">
+    <section class="block observe">
+      <div class="section-head">
+        <div>
+          <h2>Instinct Trainer: Spot the Snare</h2>
+          <p class="section-desc">
+            Emulate encounters—adjudicate abruptly, assimilate acutely. Sculpt your sentinel sense against subterfuge.
+          </p>
+        </div>
+      </div>
+      <div class="sim-grid">
+        <div class="sim-card observe" data-answer="scam" data-answered="false">
+          <div class="sim-msg">
+            "Thrilling news! Free iPhone awaits—remit ₹2,999 'processing' in 5 mins or forfeit."
+          </div>
+          <div class="sim-buttons">
+            <button class="sim-btn sim-btn-safe" onclick="answerSim(this,'safe')">Legit</button>
+            <button class="sim-btn sim-btn-scam" onclick="answerSim(this,'scam')">Trap</button>
+          </div>
+          <div class="sim-explain"></div>
+        </div>
+        <div class="sim-card observe" data-answer="safe" data-answered="false">
+          <div class="sim-msg">
+            "App alert: Unusual login detected—review in settings now."
+          </div>
+          <div class="sim-buttons">
+            <button class="sim-btn sim-btn-safe" onclick="answerSim(this,'safe')">Legit</button>
+            <button class="sim-btn sim-btn-scam" onclick="answerSim(this,'scam')">Trap</button>
+          </div>
+          <div class="sim-explain"></div>
+        </div>
+        <div class="sim-card observe" data-answer="scam" data-answered="false">
+          <div class="sim-msg">
+            "Account purge imminent—furnish OTP/PIN stat to preserve."
+          </div>
+          <div class="sim-buttons">
+            <button class="sim-btn sim-btn-safe" onclick="answerSim(this,'safe')">Legit</button>
+            <button class="sim-btn sim-btn-scam" onclick="answerSim(this,'scam')">Trap</button>
+          </div>
+          <div class="sim-explain"></div>
+        </div>
+        <div class="sim-card observe" data-answer="scam" data-answered="false">
+          <div class="sim-msg">
+            "KYC lapse: Traverse this link, input deets to avert lockdown."
+          </div>
+          <div class="sim-buttons">
+            <button class="sim-btn sim-btn-safe" onclick="answerSim(this,'safe')">Legit</button>
+            <button class="sim-btn sim-btn-scam" onclick="answerSim(this,'scam')">Trap</button>
+          </div>
+          <div class="sim-explain"></div>
+        </div>
+        <div class="sim-card observe" data-answer="safe" data-answered="false">
+          <div class="sim-msg">
+            "₹500 UPI to Vendor XYZ cleared. Unrecognized? Dispute via app."
+          </div>
+          <div class="sim-buttons">
+            <button class="sim-btn sim-btn-safe" onclick="answerSim(this,'safe')">Legit</button>
+            <button class="sim-btn sim-btn-scam" onclick="answerSim(this,'scam')">Trap</button>
+          </div>
+          <div class="sim-explain"></div>
+        </div>
+        <div class="sim-card observe" data-answer="scam" data-answered="false">
+          <div class="sim-msg">
+            "Remote gig: ₹5K/day video thumbs-up. Stake 'reversible' deposit for entry."
+          </div>
+          <div class="sim-buttons">
+            <button class="sim-btn sim-btn-safe" onclick="answerSim(this,'safe')">Legit</button>
+            <button class="sim-btn sim-btn-scam" onclick="answerSim(this,'scam')">Trap</button>
+          </div>
+          <div class="sim-explain"></div>
+        </div>
+      </div>
+      <div id="simScore" class="sim-score observe">
+        Precision: <span id="simCorrect">0</span>/<span id="simTotal">0</span> | Keep sharpening your edge!
+        <br><button class="btn btn-outline" onclick="resetSim()" style="margin-top:12px;font-size:.85rem;padding:8px 16px;border-color:#ffffff;">Reset & Replay</button>
+      </div>
+      <div class="sim-timeline observe">
+        <h3>Evolution of Threats: India's Timeline</h3>
+        <p style="font-size:.9rem;color:var(--text-muted);margin-bottom:20px;text-align:center;">
+          A curated chronicle of cyber metamorphosis—adapt astutely or be antiquated.
+        </p>
+        <div class="sim-year">2018 <span>OTP/SIM Hijacks Emerge</span></div>
+        <p style="font-size:.95rem;margin-bottom:12px;">
+          Credential conquests via ephemeral codes and carrier coups cripple coffers overnight.
+        </p>
+        <div class="sim-year">2019 <span>Tech Support Facades</span></div>
+        <p style="font-size:.95rem;margin-bottom:12px;">
+          "Helpdesk" holograms hijack remotes, bestowing brigands boundless budgetary bliss.
+        </p>
+        <div class="sim-year">2020 <span>COVID Con Games</span></div>
+        <p style="font-size:.95rem;margin-bottom:12px;">
+          Succor swindles and WFH wiles wildfire; ransomware rends remote realms relentlessly.
+        </p>
+        <div class="sim-year">2021–22 <span>Loan Sharks & Leverage</span></div>
+        <p style="font-size:.95rem;margin-bottom:12px;">
+          Appusury aggressors afflict; intimate inveiglements via commandeered convos compound cruelty.
+        </p>
+        <div class="sim-year">2023–25 <span>UPI Evolves, Exploits Follow</span></div>
+        <p style="font-size:.95rem;">
+          QR quagmires, AI-anguished appeals, targeted tyrannies tax transaction talismans amid ₹20K Cr cataclysms.
+        </p>
+      </div>
+    </section>
+  </div>
+</div>
+<footer>
+  Cyber Awareness Hub · VNGSMA Vanguard · Crafted for Students, Families & Trailblazers | © 2025 – Ignite Awareness, Ignite Change
+</footer>
+<script>
+  // Theme management
+  document.getElementById('modeToggle').addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+  });
+  // Force dark mode on load
+  document.body.classList.add('dark');
+  localStorage.setItem('theme', 'dark');
+
+  // Page navigation
+  function showPage(id, btn){
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    if(btn){
+      document.querySelectorAll('.nav-center button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+    window.scrollTo({top:0,behavior:'smooth'});
+    // Animate sections
+    setTimeout(() => animateSections(), 100);
+  }
+  function setActiveNav(id){
+    const map = {home:0,threats:1,protect:2,india:3,hacked:4,sim:5};
+    const index = map[id];
+    const buttons = document.querySelectorAll('#navDesktop button');
+    buttons.forEach(b=>b.classList.remove('active'));
+    if(buttons[index]) buttons[index].classList.add('active');
+  }
+
+  // Habits interaction
+  document.querySelectorAll('.habit').forEach(habit => {
+    habit.addEventListener('click', () => {
+      document.querySelectorAll('.habit').forEach(h => h.classList.remove('active'));
+      habit.classList.add('active');
+    });
+  });
+
+  // Mobile nav
+  const navToggle = document.getElementById('navToggle');
+  const navMobile = document.getElementById('navMobile');
+  navToggle.addEventListener('click', () => {
+    const isOpen = navMobile.style.display !== 'none';
+    navMobile.style.display = isOpen ? 'none' : 'block';
+    navToggle.classList.toggle('active', !isOpen);
+  });
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 1024) {
+      navMobile.style.display = 'none';
+      navToggle.classList.remove('active');
+    }
+  });
+
+  // Meter animation
+  window.addEventListener('load', () => {
+    const meter = document.getElementById('riskMeter');
+    if (meter) {
+      setTimeout(() => { meter.style.transform = 'scaleX(0.8)'; }, 800);
+    }
+    animateSections();
+  });
+
+  // Scroll animations
+  function animateSections() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.observe').forEach(el => observer.observe(el));
+  }
+
+  // Simulator enhanced
+  let simCorrect = 0;
+  let simTotal = 0;
+  function answerSim(button, choice) {
+    const card = button.closest('.sim-card');
+    if (card.dataset.answered === 'true') return;
+    card.dataset.answered = 'true';
+    const correct = card.getAttribute('data-answer');
+    const explain = card.querySelector('.sim-explain');
+    simTotal++;
+    const buttons = card.querySelectorAll('.sim-btn');
+    buttons.forEach(b => b.disabled = true);
+    if (choice === correct) {
+      simCorrect++;
+      explain.innerHTML = choice === 'scam' ? 
+        '<strong>Spot On!</strong> Urgency + demands = classic con. Sidestep links and secrets—your intuition is elite.' : 
+        '<strong>Well Discerned!</strong> Notifications guide, but verify origins always. Precision pays.';
+      explain.style.color = '#059669';
+      explain.style.background = 'rgba(16,185,129,0.2)';
+    } else {
+      explain.innerHTML = `<strong>Close Call!</strong> It's a ${correct.toUpperCase()}. Hallmarks: pressure, PIN pleas, unsolicited asks. Refine and retry.`;
+      explain.style.color = '#dc2626';
+      explain.style.background = 'rgba(220,38,38,0.2)';
+    }
+    updateScore();
+    card.style.borderColor = choice === correct ? 'var(--success)' : 'var(--danger)';
+  }
+  function updateScore() {
+    const correctEl = document.getElementById('simCorrect');
+    const totalEl = document.getElementById('simTotal');
+    correctEl.textContent = simCorrect;
+    totalEl.textContent = simTotal;
+    const scoreEl = document.getElementById('simScore');
+    const percentage = simTotal > 0 ? Math.round((simCorrect / simTotal) * 100) : 0;
+    scoreEl.innerHTML = `Precision: ${simCorrect}/${simTotal} (${percentage}%) | ${percentage >= 80 ? 'Masterful!' : percentage >= 50 ? 'Solid Progress!' : 'Sharpen Up!'}<br><button class="btn btn-outline" onclick="resetSim()" style="margin-top:12px;font-size:.85rem;padding:8px 16px;border-color:#ffffff;">Reset & Replay</button>`;
+  }
+  function resetSim() {
+    simCorrect = 0;
+    simTotal = 0;
+    document.querySelectorAll('.sim-card').forEach(card => {
+      card.dataset.answered = 'false';
+      const explain = card.querySelector('.sim-explain');
+      explain.innerHTML = '';
+      explain.style.color = '';
+      explain.style.background = '';
+      const buttons = card.querySelectorAll('.sim-btn');
+      buttons.forEach(b => b.disabled = false);
+      card.style.borderColor = 'var(--border)';
+    });
+    updateScore();
+  }
+</script>
+</body>
+</html>
